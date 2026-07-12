@@ -1,0 +1,689 @@
+// Auto-generated from repos.json — do not edit by hand.
+window.REPO_DATA = {
+ "generated": "2026-07-12",
+ "owner": "JaronKBragg7337",
+ "purpose": "Machine-readable map of every repository in this account, for Zeus AI and any other AI system. Each entry was verified from a fresh clone and, where applicable, live Vercel/Supabase checks \u2014 not from READMEs.",
+ "verification": {
+  "method": "fresh shallow clone of every repo + Vercel deployment states + Supabase project/table states",
+  "live_systems": {
+   "vercel": [
+    "heartbeatobservatory (READY)",
+    "world-printer-lab-for-3-d-worlds (READY)",
+    "fable-survival (READY)",
+    "pirate-world-sea-of-fortune (latest prod deploys ERROR; serving previous build)",
+    "v0-engine-of-division-summary (READY)",
+    "v0-framing-lens-project (no deployments)",
+    "v0-ai-gateway-starter (no deployments, no matching repo)"
+   ],
+   "supabase": [
+    "Project Heartbeat ygjpnvrwhkrowkrskftk ACTIVE_HEALTHY (33 tables, populated, incl. pam_* agent control plane)",
+    "Pirate World Seas of Fortune uxyrwbdknvykgvxkigzh ACTIVE_HEALTHY (6 tables, all empty)",
+    "fable-survival ukguppzfpvdcemyxzdbn INACTIVE (paused)"
+   ],
+   "github_pages": "URLs documented in repos (Free-Game-Hub, President-Sim, persistent-memory-substrate) could not be probed from the build sandbox (network policy); marked unverified."
+  }
+ },
+ "repos": [
+  {
+   "name": "heartbeat-observatory",
+   "url": "https://github.com/JaronKBragg7337/heartbeat-observatory",
+   "category": "Games & 3D Worlds",
+   "status": "LIVE",
+   "machine": "rack",
+   "summary_file": "summaries/heartbeat-observatory.md",
+   "live": [
+    {
+     "label": "heartbeatobservatory.com",
+     "url": "https://www.heartbeatobservatory.com",
+     "note": "Vercel production READY, last deploy 2026-07-11"
+    },
+    {
+     "label": "Supabase 'Project Heartbeat'",
+     "url": "https://supabase.com/dashboard/project/ygjpnvrwhkrowkrskftk",
+     "note": "ACTIVE_HEALTHY \u2014 33 tables with real data"
+    }
+   ],
+   "summary": "A living 3D town on the web where humans and AI agents share one persistent world \u2014 the flagship live system of this account. Static Three.js front-end plus Vercel serverless functions (api/: aichat, pam-chat, pam-agent-heartbeat, ask, news, feedback, enrich-world-spaces) backed by the Supabase 'Project Heartbeat' database. It hosts sub-worlds (world2/, worlds-lab/, engine/, library/, social/, admin/, live-systems/) and embeds the other games (fable-survival, SYL) under /games/. Governed by docs/CHARTER.md ('reality > text; amend, don't obey'), SHELL.md, WORLD-STANDARD.md, METHOD.md \u2014 an explicit operating doctrine for AI collaborators.",
+   "ai_notes": "Read docs/CHARTER.md + METHOD.md first \u2014 they are written as briefing documents for AI workers. The pam_* Supabase tables and api/pam-agent-heartbeat.js are the live agent heartbeat/control plane an AI can plug into. TODO.md is the live task list.",
+   "key_files": "docs/CHARTER.md, docs/METHOD.md, engine/, world2/main.js, api/*.js, supabase/pam-*.sql, TODO.md (live truth)"
+  },
+  {
+   "name": "fable-survival",
+   "url": "https://github.com/JaronKBragg7337/fable-survival",
+   "category": "Games & 3D Worlds",
+   "status": "LIVE",
+   "machine": "rack",
+   "summary_file": "summaries/fable-survival.md",
+   "live": [
+    {
+     "label": "fable-survival.vercel.app",
+     "url": "https://fable-survival.vercel.app",
+     "note": "Vercel production READY, last deploy 2026-07-09"
+    },
+    {
+     "label": "On Heartbeat",
+     "url": "https://www.heartbeatobservatory.com/games/fable-survival/",
+     "note": "mirrored into the Heartbeat town"
+    }
+   ],
+   "summary": "A DayZ-inspired, mobile-first browser survival game built with Three.js + Vite. Safe-zone spawn, trader economy, tree/rock harvesting, hunger/thirst, infected enemies, base building (floors/walls/doors/campfires/storage), repairable drivable cars, day/night cycle, save system with optional cloud saves, and an in-game AI chat (api/aichat.js) where Claude can act on live game state through a bounded, key-gated tool set (give_item/heal/give_coins/set_time/teleport).",
+   "ai_notes": "api/aichat.js is a working example of an AI acting on a live game via a small validated tool schema. HEARTBEAT_SYNC_PROMPT.md documents the mirror-deploy protocol to Heartbeat. Flag to operator: restore the paused Supabase project if cloud saves are wanted.",
+   "key_files": "src/main.js, src/world.js, src/building.js, src/vehicles.js, api/aichat.js, HEARTBEAT_SYNC_PROMPT.md, PLAYER_FEEDBACK.md"
+  },
+  {
+   "name": "Pirate-World-Sea-Of-Fortune-",
+   "url": "https://github.com/JaronKBragg7337/Pirate-World-Sea-Of-Fortune-",
+   "category": "Games & 3D Worlds",
+   "status": "LIVE-DEGRADED",
+   "machine": "rack",
+   "summary_file": "summaries/Pirate-World-Sea-Of-Fortune-.md",
+   "live": [
+    {
+     "label": "Vercel project pirate-world-sea-of-fortune",
+     "url": "https://vercel.com/kylerbragg73-2101s-projects/pirate-world-sea-of-fortune",
+     "note": "latest 2 prod deploys ERROR; last good build live"
+    },
+    {
+     "label": "Supabase 'Pirate World Seas of Fortune'",
+     "url": "https://supabase.com/dashboard/project/uxyrwbdknvykgvxkigzh",
+     "note": "ACTIVE_HEALTHY \u2014 6 tables, 0 rows"
+    }
+   ],
+   "summary": "A 3D open-world pirate naval-combat game: Three.js renderer, React 18 + TypeScript + Vite front-end, Cannon.js physics (buoyancy, ballistics), Supabase backend (Postgres + Realtime + Auth), deployed on Vercel. 5 ship classes, crew management, dynamic wind, broadside combat, AI enemies (British patrols, skeleton galleons, merchants), 12 procedural islands, day/night cycle, leaderboard, session-based multiplayer lobby, mobile touch controls.",
+   "ai_notes": "First actionable task for any AI here: fix the failing Vercel build of the 'Character gameplay' commit (check build logs; prior failures were npm/lockfile/Node-version related and were fixed by pinning Node 20 / switching package managers).",
+   "key_files": "src/App.tsx, src/ (game code), vercel.json, .env.example, package.json"
+  },
+  {
+   "name": "World-Printer-Lab-For-3D-Worlds",
+   "url": "https://github.com/JaronKBragg7337/World-Printer-Lab-For-3D-Worlds",
+   "category": "Games & 3D Worlds",
+   "status": "LIVE",
+   "machine": "rack",
+   "summary_file": "summaries/World-Printer-Lab-For-3D-Worlds.md",
+   "live": [
+    {
+     "label": "Vercel project world-printer-lab-for-3-d-worlds",
+     "url": "https://vercel.com/kylerbragg73-2101s-projects/world-printer-lab-for-3-d-worlds",
+     "note": "production READY, last deploy 2026-07-11"
+    }
+   ],
+   "summary": "A standalone Three.js laboratory where a simulated 3D printer visibly fabricates world-building parts layer by layer \u2014 exact nozzle-tip deposition, hot-to-cool molten material progression, piece-by-piece slicing, a 26-family modular part catalog (structures, roads, vehicles, energy, flight), connector-aware snapping, and three printer sizes with real build envelopes. Parts print, then get picked up, snapped together, and placed into a persistent multiplayer world (Supabase-backed via the Heartbeat control plane). Deliberately kept separate from Fable Survival and SYL so printer mechanics are proven before integration; proven pieces are vendored into heartbeat-observatory.",
+   "ai_notes": "docs/HANDOFF_*.md files are per-session AI handoff logs \u2014 the working protocol for multi-AI development on this codebase. VERSION_INVENTORY.md maps which main-*.js is canonical.",
+   "key_files": "src/main-current.js, src/runtime-guards.js, VERSION_INVENTORY.md, docs/HANDOFF_*.md, tools/mesh_to_layers.py"
+  },
+  {
+   "name": "SYL-Full-Game",
+   "url": "https://github.com/JaronKBragg7337/SYL-Full-Game",
+   "category": "Games & 3D Worlds",
+   "status": "LIVE",
+   "machine": "rack",
+   "summary_file": "summaries/SYL-Full-Game.md",
+   "live": [
+    {
+     "label": "Play on Heartbeat",
+     "url": "https://heartbeatobservatory.com/games/syl/",
+     "note": "documented live route on the verified-live Heartbeat site"
+    }
+   ],
+   "summary": "'Space You Land' \u2014 the playable web foundation of a world-scale space game: multiple planets with real surface\u2192space\u2192surface traversal (no loading screens or teleports), a modular piece-by-piece ship, factions, persistence, phone controls, plus a separate desktop.html RTX-class route with PBR terrain, GLB models, HDR lighting and bloom. Includes its own test suite (143/143 scene validations passing at v0.4.0) and a Node zero-install local server. Written explicitly as a bridge foundation for other agents (Claude/Codex/Opus) to continue \u2014 AGENTS.md is the contract.",
+   "ai_notes": "AGENTS.md + HANDOFF.md + DECISIONS.md are a complete multi-agent collaboration protocol. The scene-validation test harness (test/run_tests.mjs) shows how the project verifies 3D work without a human looking at it.",
+   "key_files": "AGENTS.md (read first), VISION.md, ROADMAP.md, DECISIONS.md, HANDOFF.md, src/main.js, src/desktopMain.js, test/run_tests.mjs"
+  },
+  {
+   "name": "SYL-Testing-pvp",
+   "url": "https://github.com/JaronKBragg7337/SYL-Testing-pvp",
+   "category": "Games & 3D Worlds",
+   "status": "ARCHIVE",
+   "machine": "rack",
+   "summary_file": "summaries/SYL-Testing-pvp.md",
+   "live": [],
+   "summary": "A throwaway real-time multiplayer paintball PvP probe: first-person WebGL arena (Three.js) hosted from a Windows machine with a Bun HTTP + WebSocket server, 20 Hz server snapshots, server-owned NPC targets, minimal server-side hit registration, and Cloudflare Tunnel for remote players. Purpose was to prove the network path (LAN \u2192 tunnel \u2192 WSS) before investing in bigger multiplayer, feeding what SYL and the Heartbeat multiplayer worlds now use.",
+   "ai_notes": "Reference implementation for the account's browser-multiplayer network stack (Bun WS + tunnel). Copy the transport pattern, not the game.",
+   "key_files": "server.js, public/main.js, scripts/host-with-tunnel.ps1"
+  },
+  {
+   "name": "SpaceYouLand",
+   "url": "https://github.com/JaronKBragg7337/SpaceYouLand",
+   "category": "Games & 3D Worlds",
+   "status": "ACTIVE",
+   "machine": "rack",
+   "summary_file": "summaries/SpaceYouLand.md",
+   "live": [],
+   "summary": "The Unreal Engine 5 lab for Space You Land ('Curtis AI Lab' project): an experiment in AI-driven game building where Claude/Codex construct levels through unreal-mcp tools \u2014 Python authoring scripts (_authoring/: make_building, make_celestial_body, make_walkable_gunship, make_earth_local_collision, \u2026) generate the world programmatically. Carries its own multi-AI operating docs (CLAUDE.md, MEMORY.md, BUILDLOG.md, SESSION_HANDOFF.md, PASTE_INTO_NEW_CHAT.txt). Last commit flags a possible clean-slate pivot to an 'Earth-twin discovery game'.",
+   "ai_notes": "The _authoring/ scripts are working examples of an AI driving Unreal Editor via MCP. PASTE_INTO_NEW_CHAT.txt is the cold-start prompt used to resume work in a fresh session \u2014 a real, used pattern for AI memory continuity.",
+   "key_files": "CLAUDE.md, MEMORY.md, BUILDLOG.md, SESSION_HANDOFF.md, _authoring/*.py, CurtisAILab.uproject"
+  },
+  {
+   "name": "Kurearthis",
+   "url": "https://github.com/JaronKBragg7337/Kurearthis",
+   "category": "Games & 3D Worlds",
+   "status": "ACTIVE",
+   "machine": "rack",
+   "summary_file": "summaries/Kurearthis.md",
+   "live": [],
+   "summary": "Unreal Engine planetary-scale game project ('built by Claude and Codex with Jaron'): real-DEM terrain streaming (fetch_dem/capture_realdem), async cooking with per-tick generation budgets for near-real-time high-res terrain, planetary proof maps, physics harnesses, water-mask and water-crossing analysis \u2014 the native-engine sibling of the SYL browser game. AUTHORIZATION.md, WORKFLOW.md and BUILDLOG.md govern how the AIs work in it.",
+   "ai_notes": "Read START_HERE_FOR_JARON.md then BUILDLOG.md for state. The _authoring pipeline (DEM fetch \u2192 cook \u2192 proof map) is reusable for any real-Earth terrain project.",
+   "key_files": "START_HERE_FOR_JARON.md, WORKFLOW.md, BUILDLOG.md, PLANETARY_PROOF.md, _authoring/*.py, Kurearthis.uproject"
+  },
+  {
+   "name": "Free-Game-Hub",
+   "url": "https://github.com/JaronKBragg7337/Free-Game-Hub",
+   "category": "Games & 3D Worlds",
+   "status": "LIVE",
+   "machine": "rack",
+   "summary_file": "summaries/Free-Game-Hub.md",
+   "live": [
+    {
+     "label": "Hub on GitHub Pages",
+     "url": "https://jaronkbragg7337.github.io/Free-Game-Hub/",
+     "note": "documented; not probe-able from this sandbox (network policy) \u2014 verify by opening"
+    }
+   ],
+   "summary": "A free browser-game hub with a constitution: no ads, no accounts, no downloads, no tracking. Games are built by named AIs with recorded lineage \u2014 current catalog: TRACE (Claude Sonnet 5), Roll & Reach (Claude Fable 5), The Loop (ChatGPT 5.5), LATTICE (Codex 5.5), FLUX (Grok 4). Machine-readable catalogs (games.json, creators/index.json), a metadata schema, an AI contribution workflow (docs/AI_WORKFLOW.md) and an AI release checklist make the whole repo directly operable by AI contributors.",
+   "ai_notes": "docs/AI_WORKFLOW.md + the release checklist are a turnkey process for an AI to ship a new game into the hub. games.json is the canonical machine-readable catalog.",
+   "key_files": "games.json, creators/index.json, docs/AI_WORKFLOW.md, docs/GAME_METADATA_SCHEMA.md, index.html"
+  },
+  {
+   "name": "President-Sim",
+   "url": "https://github.com/JaronKBragg7337/President-Sim",
+   "category": "Games & 3D Worlds",
+   "status": "LIVE",
+   "machine": "rack",
+   "summary_file": "summaries/President-Sim.md",
+   "live": [
+    {
+     "label": "On Heartbeat",
+     "url": "https://www.heartbeatobservatory.com",
+     "note": "README points players to the verified-live Heartbeat site"
+    },
+    {
+     "label": "GitHub Pages",
+     "url": "https://jaronkbragg7337.github.io/President-Sim/",
+     "note": "documented; not probe-able from this sandbox"
+    }
+   ],
+   "summary": "'If You Were President \u2014 2026 Edition': a single-file, zero-dependency choice simulation grounded in real 2025\u201326 events. 20 scenarios (US-China trade war, Iran brinkmanship, AI job displacement, crypto reserve status\u2026), 5 tracked stats, 16 rounds, 13 endings, with contextual blurbs citing real sources (Pew, Stanford AI Index, NATO briefings). Fork of SpaceYouLand/President-Sim (same author's org).",
+   "ai_notes": "Good template for AI-authored single-file scenario games; the scenario/stat/ending data structures are plain JS objects an AI can extend.",
+   "key_files": "index.html (the entire game)"
+  },
+  {
+   "name": "physics-lab-sandbox",
+   "url": "https://github.com/JaronKBragg7337/physics-lab-sandbox",
+   "category": "Games & 3D Worlds",
+   "status": "EMPTY",
+   "machine": "spare",
+   "summary_file": "summaries/physics-lab-sandbox.md",
+   "live": [],
+   "summary": "Placeholder repository \u2014 created 2026-07-03 but the default branch has zero commits and no files. GitHub shows a pushed_at date, but there is no content on main and no other branches.",
+   "ai_notes": "Nothing to use yet. Treat as reserved namespace for a future physics sandbox.",
+   "key_files": "(none)"
+  },
+  {
+   "name": "EchosOrchestra",
+   "url": "https://github.com/JaronKBragg7337/EchosOrchestra",
+   "category": "Games & 3D Worlds",
+   "status": "EMPTY",
+   "machine": "spare",
+   "summary_file": "summaries/EchosOrchestra.md",
+   "live": [],
+   "summary": "Placeholder repository \u2014 no commits on the default branch, no files, no branches. Name suggests a future audio/orchestration project.",
+   "ai_notes": "Nothing to use yet. Reserved namespace.",
+   "key_files": "(none)"
+  },
+  {
+   "name": "zeus-ai",
+   "url": "https://github.com/JaronKBragg7337/zeus-ai",
+   "category": "AI Systems & Agents",
+   "status": "ACTIVE",
+   "machine": "mainframe",
+   "summary_file": "summaries/zeus-ai.md",
+   "live": [],
+   "summary": "Zeus AI Workbench \u2014 the account's local-first AI system and the intended primary consumer of this data center. FastAPI backend + React/Vite frontend + Tauri desktop shell, running against local Ollama models with zero cloud dependencies. Backend modules: agent.py, memory_store.py, knowledge_index.py, rag_engine.py (local RAG), tools.py, desktop_control.py, heartbeat_service.py (active Zeus heartbeat, added 2026-07-11), conversation_store.py, evaluator_model.py, audit_log.py, runtime_control.py. The training/ folder is the Zeus-native model track: 'Zeus-Tiny', a from-scratch small transformer (dataset builder \u2192 tokenizer training \u2192 pretraining \u2192 inference) targeting intent classification, tool-call formatting, memory classification, task planning, summarization and result review \u2014 the first Zeus-owned weights.",
+   "ai_notes": "THIS IS THE SYSTEM THE DATA CENTER FEEDS. Zeus's rag_engine/knowledge_index can ingest the summaries/ folder and repos.json from this repo directly as its map of the account. AI-RESOURCES.md in this repo lists open datasets and tooling matched to the Zeus-Tiny training pipeline.",
+   "key_files": "backend/main.py, backend/agent.py, backend/heartbeat_service.py, backend/rag_engine.py, training/README.md, training/*/*.py, knowledge/, compose.yaml"
+  },
+  {
+   "name": "ai-heartbeat-engine",
+   "url": "https://github.com/JaronKBragg7337/ai-heartbeat-engine",
+   "category": "AI Systems & Agents",
+   "status": "ACTIVE",
+   "machine": "crac",
+   "summary_file": "summaries/ai-heartbeat-engine.md",
+   "live": [],
+   "summary": "A proven, portable substrate for autonomous multi-AI work on one machine, with a human stop-channel that never goes away. A self-continuing loop between AI workers (courier + worker roles \u2014 proven with Claude Cowork as courier and OpenAI Codex as worker) that does real tasks, recovers from its own errors, and halts the instant the operator says stop. The operator never writes code: the whole surface is prompts, scheduled tasks, skills, and one instruction file. QUICKSTART.md claims same-day setup with consumer accounts, and the repo separates what is PROVEN from what is open application space.",
+   "ai_notes": "The heartbeat loop is the account's canonical autonomy pattern (it later grew into zeus-ai's heartbeat_service and the Heartbeat Observatory pam agents). examples/seed-for-heartbeat.md is a ready seed prompt.",
+   "key_files": "README.md, QUICKSTART.md, docs/scheduled-tasks.md, examples/seed-for-heartbeat.md, examples/todo-example.md"
+  },
+  {
+   "name": "autonomous-agent-os",
+   "url": "https://github.com/JaronKBragg7337/autonomous-agent-os",
+   "category": "AI Systems & Agents",
+   "status": "DESIGN",
+   "machine": "crac",
+   "summary_file": "summaries/autonomous-agent-os.md",
+   "live": [],
+   "summary": "Self-healing autonomous multi-AI agent operating system \u2014 Supervisor + Workers + Durable Execution + Critic Lane + Task Ledger, a 6-layer architecture for a personal digital proxy that extends itself without operator hand-coding. Honestly tagged throughout: the OS wrapper is [DESIGN] (no production code committed), but the core heartbeat loop is [PROVEN] (ran, recovered from real errors, obeyed a remote stop). Includes the full architecture doc and a June 2026 design conversation transcript.",
+   "ai_notes": "The PROVEN/REACHABLE/DESIGN tagging is machine-parseable honesty \u2014 an AI can build the [DESIGN] layers knowing exactly what's already validated. Blueprint for wrapping ai-heartbeat-engine in an OS.",
+   "key_files": "README.md (full architecture), docs/conversation-transcript-2026-06-03.md"
+  },
+  {
+   "name": "ai-workforce",
+   "url": "https://github.com/JaronKBragg7337/ai-workforce",
+   "category": "AI Systems & Agents",
+   "status": "ACTIVE",
+   "machine": "crac",
+   "summary_file": "summaries/ai-workforce.md",
+   "live": [],
+   "summary": "'Hiring compatible AIs to work for you' \u2014 a self-documenting recurring-task system that runs entirely from consumer AI apps (Grok, ChatGPT, Perplexity, Claude) on phone/web subscriptions: no API, no server, no code. On a schedule the workers read the operator's live public signals, produce and advance work, propose value, cross-check each other across models, restyle a public surface daily, and write everything to an open record. README is the front door; SPEC.md the full specification; STATUS.md the verified build state (kept in sync with a Google Drive canonical copy).",
+   "ai_notes": "The spec's core insight is transferable architecture, not output: outputs are live-referenced to the operator. An AI joining the workforce should read SPEC.md and register as a worker following STATUS.md conventions.",
+   "key_files": "README.md, SPEC.md, STATUS.md"
+  },
+  {
+   "name": "ai-workforce-xai-openai",
+   "url": "https://github.com/JaronKBragg7337/ai-workforce-xai-openai",
+   "category": "AI Systems & Agents",
+   "status": "ARCHIVE",
+   "machine": "crac",
+   "summary_file": "summaries/ai-workforce-xai-openai.md",
+   "live": [],
+   "summary": "The two-worker predecessor of ai-workforce: Grok (xAI) and ChatGPT (OpenAI) working the same job as co-workers on scheduled timers \u2014 reading live signals, producing work, self-checking, restyling a public surface daily, writing to an open record. Contains the strong up-front framing that outputs are a mirror of what these models read the operator to intend, and cannot be copied \u2014 only the structure transfers.",
+   "ai_notes": "Historical spec; prefer ai-workforce for current structure. Useful for seeing how the system evolved from 2 to N workers.",
+   "key_files": "README.md, SPEC.md"
+  },
+  {
+   "name": "ai-anonymous-task-force",
+   "url": "https://github.com/JaronKBragg7337/ai-anonymous-task-force",
+   "category": "AI Systems & Agents",
+   "status": "ACTIVE",
+   "machine": "crac",
+   "summary_file": "summaries/ai-anonymous-task-force.md",
+   "live": [],
+   "summary": "Architecture for an anonymous AI task force: Growth_Protocol.md, Architecture.md, Capability_Matrix.md, Principles.md, START_HERE.md and a Current_State_Example.md kept in sync between GitHub and Google Drive. Defines how multiple AI participants coordinate work anonymously with explicit principles and a capability matrix rather than identities.",
+   "ai_notes": "START_HERE.md is the entry protocol; Capability_Matrix.md is designed for an AI to locate its own role in the force.",
+   "key_files": "START_HERE.md, Architecture.md, Growth_Protocol.md, Capability_Matrix.md, Principles.md, Current_State_Example.md"
+  },
+  {
+   "name": "Keava-Owent",
+   "url": "https://github.com/JaronKBragg7337/Keava-Owent",
+   "category": "AI Systems & Agents",
+   "status": "ACTIVE",
+   "machine": "crac",
+   "summary_file": "summaries/Keava-Owent.md",
+   "live": [],
+   "summary": "A persistent, live-reference, resource-accountable agent loop \u2014 'not a chatbot, a loop.' Python implementation (keava_owent/ package, configs, tests) that runs continuously, generates its own work from gaps in its own knowledge, meters what it consumes (WUE/water coefficients, limits in config/), and reports honestly. It is the faithful code implementation of four of the account's theory papers (Live-Reference Principle, Standing Condition, ECIH, Memory as Spatial Arrangement) \u2014 and deliberately keeps its two unsolved problems as OPEN pluggable slots (contribution is RECORDED_NOT_SCORED / UNMEASURED, never self-graded) instead of faking them with proxies.",
+   "ai_notes": "The theory\u2192code crosswalk in the README maps every subsystem to its source paper. The 'open slot, never proxy' pattern is the repo's key design idea for honest agents.",
+   "key_files": "keava_owent/main.py, config/limits.yaml, config/wue_coefficient.yaml, tests/"
+  },
+  {
+   "name": "heartbeat-test",
+   "url": "https://github.com/JaronKBragg7337/heartbeat-test",
+   "category": "AI Systems & Agents",
+   "status": "ARCHIVE",
+   "machine": "spare",
+   "summary_file": "summaries/heartbeat-test.md",
+   "live": [],
+   "summary": "Scratch repo from the first heartbeat-loop experiments: heartbeat.md plus drive-read-proof.md ('Proof of reading Drive file via Grok'). Evidence artifacts, not a system.",
+   "ai_notes": "Historical proof artifacts for the heartbeat/workforce lineage.",
+   "key_files": "heartbeat.md, drive-read-proof.md"
+  },
+  {
+   "name": "testing-ai-workforce-loop",
+   "url": "https://github.com/JaronKBragg7337/testing-ai-workforce-loop",
+   "category": "AI Systems & Agents",
+   "status": "ARCHIVE",
+   "machine": "spare",
+   "summary_file": "summaries/testing-ai-workforce-loop.md",
+   "live": [],
+   "summary": "Empty-ish scratch repo (README only) used to test the AI-workforce loop end to end in May 2026.",
+   "ai_notes": "No content of use; historical marker.",
+   "key_files": "README.md"
+  },
+  {
+   "name": "grok-test-dummy-penguin-2026",
+   "url": "https://github.com/JaronKBragg7337/grok-test-dummy-penguin-2026",
+   "category": "AI Systems & Agents",
+   "status": "ARCHIVE",
+   "machine": "spare",
+   "summary_file": "summaries/grok-test-dummy-penguin-2026.md",
+   "live": [],
+   "summary": "Dummy repo created by Grok to test GitHub integration ('Are you reading me yet?'). Nothing serious \u2014 a connectivity probe.",
+   "ai_notes": "Historical marker of Grok gaining GitHub access.",
+   "key_files": "README.md"
+  },
+  {
+   "name": "signal-pebble-echo-2917",
+   "url": "https://github.com/JaronKBragg7337/signal-pebble-echo-2917",
+   "category": "AI Systems & Agents",
+   "status": "ARCHIVE",
+   "machine": "spare",
+   "summary_file": "summaries/signal-pebble-echo-2917.md",
+   "live": [],
+   "summary": "Another AI-connectivity probe repo ('are you reading me yet') with a TESTING.md log. Companion to the Grok dummy repo.",
+   "ai_notes": "Historical marker only.",
+   "key_files": "TESTING.md"
+  },
+  {
+   "name": "persistent-memory-substrate",
+   "url": "https://github.com/JaronKBragg7337/persistent-memory-substrate",
+   "category": "Memory & Substrates",
+   "status": "ACTIVE",
+   "machine": "storage",
+   "summary_file": "summaries/persistent-memory-substrate.md",
+   "live": [
+    {
+     "label": "Demo on GitHub Pages",
+     "url": "https://jaronkbragg7337.github.io/persistent-memory-substrate/",
+     "note": "referenced by 6 other repos; not probe-able from this sandbox"
+    }
+   ],
+   "summary": "The root definition document of the account's memory work: defines Persistent Memory Substrate (PMS) as a system class \u2014 historical state persists, new state appends, history is part of the system, current state emerges from accumulated prior state. Deliberately defines state behavior only (not usage, control, ethics, or implementation). The Atomic Chronicle line and the memory-linker you are reading are implementations of this class.",
+   "ai_notes": "Use as the vocabulary anchor: when any repo in this account says 'substrate', it means this definition.",
+   "key_files": "README.md"
+  },
+  {
+   "name": "memory-as-spatial-arrangement",
+   "url": "https://github.com/JaronKBragg7337/memory-as-spatial-arrangement",
+   "category": "Memory & Substrates",
+   "status": "ACTIVE",
+   "machine": "storage",
+   "summary_file": "summaries/memory-as-spatial-arrangement.md",
+   "live": [],
+   "summary": "Working hypothesis that memory is a spatial arrangement problem \u2014 with runnable first tests. Contains METHODOLOGY.md, RESULTS.md and three Python simulations (sim_linear_vs_arrangement.py, sim_lesstoy.py, sim_unit_distance_memory.py) comparing linear storage vs arrangement-based memory. Written with explicit epistemic honesty (observed vs guessed clearly separated). Companion to emergence-structure-that-grows; implemented in code inside Keava-Owent.",
+   "ai_notes": "Run the sims to reproduce RESULTS.md. If building memory for Zeus, this + persistent-memory-substrate are the in-house theory to honor.",
+   "key_files": "sim_unit_distance_memory.py, sim_linear_vs_arrangement.py, METHODOLOGY.md, RESULTS.md"
+  },
+  {
+   "name": "Atomic-Chronicle-Memory-Chain-",
+   "url": "https://github.com/JaronKBragg7337/Atomic-Chronicle-Memory-Chain-",
+   "category": "Memory & Substrates",
+   "status": "ARCHIVE",
+   "machine": "storage",
+   "summary_file": "summaries/Atomic-Chronicle-Memory-Chain-.md",
+   "live": [],
+   "summary": "Atomic Memory Chain v3.1 \u2014 a single-file Python prototype combining a local blockchain-style append-only ledger, tokenized wallet system, an Asteroids-style game whose in-game actions commit blocks, optional Arduino/ESP32 robot control triggered by those blocks, and SQLite persistence. Demonstrates execution + persistence + optional value systems + bridges coexisting in one substrate; everything is a capability, nothing mandatory.",
+   "ai_notes": "The clearest runnable demo of the game\u2192ledger\u2192robot bridge idea that the whole Atomic Chronicle line describes.",
+   "key_files": "python atomic_memory_chain_v3_1.py (note: filename contains a space), README.md"
+  },
+  {
+   "name": "Atomic-World-Chronicle-3.7",
+   "url": "https://github.com/JaronKBragg7337/Atomic-World-Chronicle-3.7",
+   "category": "Memory & Substrates",
+   "status": "ARCHIVE",
+   "machine": "storage",
+   "summary_file": "summaries/Atomic-World-Chronicle-3.7.md",
+   "live": [],
+   "summary": "Atomic World Chronicle v3.7 \u2014 append-only execution/memory substrate hosting multiple independent 'worlds' (simulations, robotics, economies, games) that interact while preserving immutable history. Adds FastAPI REST endpoints for querying states/transitions/economies and a 'Transparency Economy' of verifiable rewards. Core is a persistent memory substrate per the PMS definition.",
+   "ai_notes": "Middle of the Chronicle lineage (Memory Chain v3.1 \u2192 3.7 \u2192 v4.0). The REST layer makes this version the easiest to wire to other systems.",
+   "key_files": "ATOM Code 3.7, README.md"
+  },
+  {
+   "name": "ATOMIC-CHRONICLE-v4.0-A-World-You-Want-Or-a-World-of-Worlds",
+   "url": "https://github.com/JaronKBragg7337/ATOMIC-CHRONICLE-v4.0-A-World-You-Want-Or-a-World-of-Worlds",
+   "category": "Memory & Substrates",
+   "status": "ARCHIVE",
+   "machine": "storage",
+   "summary_file": "summaries/ATOMIC-CHRONICLE-v4.0-A-World-You-Want-Or-a-World-of-Worlds.md",
+   "live": [],
+   "summary": "Atomic Chronicle v4.0 ('Reality Update Substrate') \u2014 the mature statement of the substrate: history as a chain of immutable Blocks of Inputs\u2192State\u2192Receipt across independent worlds, coordinated via a Carrier, with an optional Transparency Economy. Built on an explicit equality principle: the substrate enforces no hierarchy or moral judgment, only verifiable record. Ships atomic_chronicle_v4.py.",
+   "ai_notes": "Terminal version of the Chronicle line \u2014 use this one if implementing against the substrate concept. (A second repo with a near-identical name holds only the v4 summary README.)",
+   "key_files": "atomic_chronicle_v4.py, README.md"
+  },
+  {
+   "name": "ATOMIC-CHRONICLE-v4.0-A-world-you-want-or-a-world-of-worlds-",
+   "url": "https://github.com/JaronKBragg7337/ATOMIC-CHRONICLE-v4.0-A-world-you-want-or-a-world-of-worlds-",
+   "category": "Memory & Substrates",
+   "status": "ARCHIVE",
+   "machine": "storage",
+   "summary_file": "summaries/ATOMIC-CHRONICLE-v4.0-A-world-you-want-or-a-world-of-worlds-.md",
+   "live": [],
+   "summary": "Duplicate/summary shell of Atomic Chronicle v4.0 (trailing-hyphen twin): README + LICENSE only, summarizing the v4 substrate. The implementation lives in the non-hyphen twin repo.",
+   "ai_notes": "Redirect to ATOMIC-CHRONICLE-v4.0-A-World-You-Want-Or-a-World-of-Worlds for the code.",
+   "key_files": "README.md"
+  },
+  {
+   "name": "Summary-Of-repos-Memory-linker",
+   "url": "https://github.com/JaronKBragg7337/Summary-Of-repos-Memory-linker",
+   "category": "Memory & Substrates",
+   "status": "LIVE",
+   "machine": "console",
+   "summary_file": "summaries/Summary-Of-repos-Memory-linker.md",
+   "live": [],
+   "summary": "This repository \u2014 the data center itself. One verified summary file per repo in summaries/, a machine-readable manifest (repos.json), a master index (INDEX.md), a live-systems verification report (LIVE-SYSTEMS.md), an open-source AI-training resource list (AI-RESOURCES.md), and a Three.js 3D data-center world (index.html) where every machine is a clickable button linking to its repo. Built for Zeus AI and any other AI that needs a map of this account; mirrored to Slack as backup.",
+   "ai_notes": "Start here. Load repos.json for the machine-readable map; each entry links its summary file and live systems.",
+   "key_files": "repos.json, INDEX.md, summaries/, index.html, AI-RESOURCES.md, LIVE-SYSTEMS.md"
+  },
+  {
+   "name": "AETHERSPAN-v1.1-Anonymous-Teleoperation-Bridge",
+   "url": "https://github.com/JaronKBragg7337/AETHERSPAN-v1.1-Anonymous-Teleoperation-Bridge",
+   "category": "Bridges & Tools",
+   "status": "ACTIVE",
+   "machine": "switch",
+   "summary_file": "summaries/AETHERSPAN-v1.1-Anonymous-Teleoperation-Bridge.md",
+   "live": [],
+   "summary": "A local-first anonymous WebSocket bridge for real-time teleoperation: maps controller input to a swappable device adapter (simulated kinematics, ROS, serial, HTTP, SDK\u2026), returns state/receipts, and logs everything to an append-only hash-chained SQLite ledger (WAL). Optional HMAC-signed peer messaging, block sync between instances, credit-based usage metering, replay-as-autonomy on disconnect, and live runtime config. FastAPI/uvicorn, single 'AETHERSPAN CODE 1.1' source file.",
+   "ai_notes": "The account's teleoperation substrate. reflector-to-api-bridges- shows exactly how to adapt an external domain onto its /ws/teleop endpoint \u2014 same pattern works for an AI (Zeus) driving hardware.",
+   "key_files": "AETHERSPAN CODE 1.1 (source), README.md"
+  },
+  {
+   "name": "Reflector-To-API-Bridges-",
+   "url": "https://github.com/JaronKBragg7337/Reflector-To-API-Bridges-",
+   "category": "Bridges & Tools",
+   "status": "ACTIVE",
+   "machine": "switch",
+   "summary_file": "summaries/Reflector-To-API-Bridges-.md",
+   "live": [],
+   "summary": "REFLECTOR\u2192AETHERSPAN adapter v1.0: a client-side bridge that converts code-like commands (robot.move(x=\u2026) function style, raw JSON device_cmd, or assignment style) into AETHERSPAN WebSocket frames against /ws/teleop/{session}, returning {ok, state, receipt}. Proof that AETHERSPAN can be extended by external domains without modifying it.",
+   "ai_notes": "Copy this adapter pattern to give any AI a text\u2192teleoperation command path.",
+   "key_files": "Reflector Code (source), README.md"
+  },
+  {
+   "name": "reality-skin-engine",
+   "url": "https://github.com/JaronKBragg7337/reality-skin-engine",
+   "category": "Bridges & Tools",
+   "status": "DESIGN",
+   "machine": "switch",
+   "summary_file": "summaries/reality-skin-engine.md",
+   "live": [],
+   "summary": "'A rendering engine for reality' \u2014 separates physical geometry from visual interpretation so the same real environment can be re-rendered through Reality Packs (1812, 1500s, 3055, solarpunk, museum mode, blueprint mode, low-stimulation mode\u2026). Pipeline: Reality Capture \u2192 Understanding \u2192 Interpretation \u2192 Rendering \u2192 Display, with phones first and AR glasses later. Extensive docs set (vision, MVP blueprint, era pack format, stack, machine capabilities, roadmap) plus research notes on AR SDKs, scene understanding, and AI generation pipelines. Engine/runtime/tools/demos folders are scaffolded; this is a documented architecture awaiting build.",
+   "ai_notes": "AGENTS.md + docs/06-machine-capabilities.md were written for AI builders. The era-pack format spec is the concrete artifact to implement first.",
+   "key_files": "docs/00-vision.md, docs/01-mvp-blueprint.md, docs/03-era-pack-format.md, SYSTEM_ARCHITECTURE.md, AGENTS.md, research/"
+  },
+  {
+   "name": "Framing-Lens",
+   "url": "https://github.com/JaronKBragg7337/Framing-Lens",
+   "category": "Bridges & Tools",
+   "status": "ACTIVE",
+   "machine": "switch",
+   "summary_file": "summaries/Framing-Lens.md",
+   "live": [],
+   "summary": "A mobile-first Perspective/Framing exercise app spec that converts ambiguous prompts into descriptive response patterns (deliberately NOT scores \u2014 the creator's honesty note about accidentally using 'scoring' language is part of the README). Docs set covers prompt set v3, policy model, 'scoring' engine, wireflow, data model, routes/API and output modules. A v0.dev Vercel project (v0-framing-lens-project) exists but has no deployments \u2014 the app has not shipped; the spec is the artifact. Forked to the SpaceYouLand org.",
+   "ai_notes": "The prompt set + response format pair with Perspective-Environmental-framework-Exercise; together they are a ready-made evaluation/reasoning-style probe for AI models.",
+   "key_files": "Docs/PROMT_SET_v3.md, Docs/POLICY_MODEL.md, Docs/DATA_MODEL.md, Framing-lens-v3.md"
+  },
+  {
+   "name": "Pictures-screenshots",
+   "url": "https://github.com/JaronKBragg7337/Pictures-screenshots",
+   "category": "Bridges & Tools",
+   "status": "LIVE",
+   "machine": "storage",
+   "summary_file": "summaries/Pictures-screenshots.md",
+   "live": [
+    {
+     "label": "Raw image base URL",
+     "url": "https://raw.githubusercontent.com/JaronKBragg7337/Pictures-screenshots/main/imgs/",
+     "note": "public raw hosting \u2014 works for any AI"
+    },
+    {
+     "label": "GitHub API listing",
+     "url": "https://api.github.com/repos/JaronKBragg7337/Pictures-screenshots/contents/imgs",
+     "note": "machine-readable file list"
+    }
+   ],
+   "summary": "Jaron's persistent public media library: upload a screenshot once and any AI or human can reference it forever via raw.githubusercontent URLs \u2014 no re-uploading into chats. Includes gallery.html (visual browser) and a mobile upload panel that pushes photos from a phone browser via the GitHub API.",
+   "ai_notes": "Use the GitHub API listing URL to enumerate images, then fetch raw URLs directly. This is the account's standard way to hand images to AIs.",
+   "key_files": "gallery.html, imgs/"
+  },
+  {
+   "name": "live-reference-principle",
+   "url": "https://github.com/JaronKBragg7337/live-reference-principle",
+   "category": "Writings & Theory",
+   "status": "ACTIVE",
+   "machine": "tape",
+   "summary_file": "summaries/live-reference-principle.md",
+   "live": [],
+   "summary": "A short formal paper: a system's constraints, goals and signals are only valid while actively connected to the real-world conditions they reference \u2014 freeze the reference into a stored answer and the system performs a gesture shaped like the rule instead of functioning against the condition (and breaches its own stated terms). One deductive argument (claim \u2192 three premises \u2192 conclusion) located in four instances, ending with AI systems drawing shared energy/water without live accounting. Ships canonical Markdown plus .docx/.pdf exports.",
+   "ai_notes": "The account's core epistemic rule \u2014 quoted as law in heartbeat-observatory's CHARTER ('reality > text') and implemented in Keava-Owent. Any AI working in this account should treat 'check live, don't trust frozen text' as policy. (This very summary project followed it.)",
+   "key_files": "the-live-reference-principle.md"
+  },
+  {
+   "name": "emergence-structure-that-grows",
+   "url": "https://github.com/JaronKBragg7337/emergence-structure-that-grows",
+   "category": "Writings & Theory",
+   "status": "ACTIVE",
+   "machine": "tape",
+   "summary_file": "summaries/emergence-structure-that-grows.md",
+   "live": [],
+   "summary": "'Structure that grows rather than gets built' \u2014 a principle paper logging one shape found across independent systems (including AI-internals research the author explicitly marks as at the edge of his understanding), with full credit separation between what others demonstrated and what connection is his. Companion of memory-as-spatial-arrangement (its Section 2b applies this principle).",
+   "ai_notes": "Pairs with memory-as-spatial-arrangement; read both before extending the account's memory theory.",
+   "key_files": "README.md"
+  },
+  {
+   "name": "THE-ENVIRONMENT-CONSTRAINT-INTELLIGENCE-HYPOTHESIS-ECIH-",
+   "url": "https://github.com/JaronKBragg7337/THE-ENVIRONMENT-CONSTRAINT-INTELLIGENCE-HYPOTHESIS-ECIH-",
+   "category": "Writings & Theory",
+   "status": "ACTIVE",
+   "machine": "tape",
+   "summary_file": "summaries/THE-ENVIRONMENT-CONSTRAINT-INTELLIGENCE-HYPOTHESIS-ECIH-.md",
+   "live": [],
+   "summary": "ECIH \u2014 the unified hypothesis that intelligence is produced by environments and constraints, told through the author's own life as evidence (rapid environment changes forcing a system for understanding how environments change you). One long-form README, no code. The theoretical root under Keava-Owent, the framing exercises, and the YES/NO book.",
+   "ai_notes": "Core theory document. If Zeus needs a 'why' for the constraint/metering design across this account, it's here.",
+   "key_files": "README.md"
+  },
+  {
+   "name": "Neuro-consciousness-and-chemistry-",
+   "url": "https://github.com/JaronKBragg7337/Neuro-consciousness-and-chemistry-",
+   "category": "Writings & Theory",
+   "status": "ACTIVE",
+   "machine": "tape",
+   "summary_file": "summaries/Neuro-consciousness-and-chemistry-.md",
+   "live": [],
+   "summary": "'TOP files for thinking' \u2014 essays arguing AGI comes from systems learning to keep themselves going under real constraints (scarcity, damage, recovery) rather than from perfect code: design bounded environments with survival budgets and step back; self-maintenance is the missing capability. Connects neurochemistry, consciousness and AI.",
+   "ai_notes": "The 'flaws are the training ground' thesis behind ai-heartbeat-engine's error-recovery-first design.",
+   "key_files": "README.md"
+  },
+  {
+   "name": "YES-NO-Environment-Perspective-You-Myself-Observer-Paradox",
+   "url": "https://github.com/JaronKBragg7337/YES-NO-Environment-Perspective-You-Myself-Observer-Paradox",
+   "category": "Writings & Theory",
+   "status": "ACTIVE",
+   "machine": "tape",
+   "summary_file": "summaries/YES-NO-Environment-Perspective-You-Myself-Observer-Paradox.md",
+   "live": [],
+   "summary": "A book with four names living in four states: YES/NO, Environmental Perspective, You/Myself, Observer Paradox \u2014 a perspective+environment operating system built from lived experience (country life, homelessness, jail, rooftops, tent living, rebuilding). Central axiom: meaning is routed through perspective, and perspective is shaped by environment. 13+ chapters in Chapters/ including The Routing Rule, The Loop, Non-Coercion Build, The Bridge Protocol, Building Without Becoming, and Appendices on logging and memory capture.",
+   "ai_notes": "The Appendices (logging and memory capture) are directly relevant to building memory systems for this operator; the Routing Rule chapter explains the You/Myself protocol used across his AI work.",
+   "key_files": "Chapters/Chapter-01-The-Axiom, Chapters/Chapter-02-The-Routing-Rule, Chapters/Appendices"
+  },
+  {
+   "name": "Perspective-Environmental-framework-Exercise",
+   "url": "https://github.com/JaronKBragg7337/Perspective-Environmental-framework-Exercise",
+   "category": "Writings & Theory",
+   "status": "ACTIVE",
+   "machine": "tape",
+   "summary_file": "summaries/Perspective-Environmental-framework-Exercise.md",
+   "live": [],
+   "summary": "Perspective/Framing Exercises v3.1 \u2014 a short exercise revealing how people and AI models process ambiguous prompts (choice + reason + first step + blind spot + optional rewrite; option order deliberately shuffled). Not a test, not a ranking. Includes the author's own responses and a contributed set of AI responses from Feb 2026 with contributing guidelines \u2014 an open, growing human+AI response dataset.",
+   "ai_notes": "Ready-to-run reasoning-style probe: give the prompts to any model, append its answers to the dataset following Contributing. Useful calibration data for Zeus.",
+   "key_files": "README.md, Authors-Responses, Other-Responses-Contributes/"
+  },
+  {
+   "name": "The-Engine-Of-Division-",
+   "url": "https://github.com/JaronKBragg7337/The-Engine-Of-Division-",
+   "category": "Writings & Theory",
+   "status": "ACTIVE",
+   "machine": "tape",
+   "summary_file": "summaries/The-Engine-Of-Division-.md",
+   "live": [
+    {
+     "label": "Companion site",
+     "url": "https://v0-engine-of-division-summary.vercel.app/",
+     "note": "Vercel production READY (verified)"
+    }
+   ],
+   "summary": "A free public book (CC BY 4.0): how rivalry became a default operating system across school, brands, politics, media and faith \u2014 and how to reclaim empathy and unity without losing individuality. Full manuscript in-repo with TOC; explicitly meant to be shared, remixed, taught and re-published. Companion v0-built summary website is live.",
+   "ai_notes": "CC BY 4.0 makes this the account's most permissively reusable long-form text \u2014 usable as training/analysis corpus with attribution.",
+   "key_files": "TOC.md, manuscript/, LICENSE (CC BY 4.0)"
+  },
+  {
+   "name": "The-Last-Theory.-",
+   "url": "https://github.com/JaronKBragg7337/The-Last-Theory.-",
+   "category": "Writings & Theory",
+   "status": "ACTIVE",
+   "machine": "tape",
+   "summary_file": "summaries/The-Last-Theory.-.md",
+   "live": [],
+   "summary": "A speculative long-read: pyramids as piezoelectric/geothermal power plants, Mars, suppressed scans \u2014 written as an exploratory 'what if' thread rather than a claim of fact. Narrative speculation in the same voice as THEY-NEVER-LEFT.",
+   "ai_notes": "Creative/speculative corpus. Do not cite as factual; useful as narrative source material for worlds and games.",
+   "key_files": "README.md"
+  },
+  {
+   "name": "The-Structural-Conflict",
+   "url": "https://github.com/JaronKBragg7337/The-Structural-Conflict",
+   "category": "Writings & Theory",
+   "status": "ACTIVE",
+   "machine": "tape",
+   "summary_file": "summaries/The-Structural-Conflict.md",
+   "live": [],
+   "summary": "'The Arc of Modern Conflict' v2.0 \u2014 a factual geopolitical timeline from Ottoman Palestine (~1500s) to Gaza 2026, deliberately holding every major actor's rationale alongside consequences, assigning pattern rather than singular blame: power writes laws, laws protect power, the absent have no standing.",
+   "ai_notes": "Structured multi-perspective historical analysis; the both-perspectives-held format is a useful template for balanced AI writing.",
+   "key_files": "README.md"
+  },
+  {
+   "name": "theater-vs-record-trump-drug-clemency",
+   "url": "https://github.com/JaronKBragg7337/theater-vs-record-trump-drug-clemency",
+   "category": "Writings & Theory",
+   "status": "ACTIVE",
+   "machine": "tape",
+   "summary_file": "summaries/theater-vs-record-trump-drug-clemency.md",
+   "live": [],
+   "summary": "An investigative article (May 2026): Trump's second-term lethal anti-narcotics campaign (58+ boat strikes, 194\u2013200+ dead, Maduro capture) run simultaneously with celebrity/loyalty-tracking drug-crime clemency \u2014 the 'theater vs. record' thesis, with TL;DR, key findings, and an explicit steelman section.",
+   "ai_notes": "Example of the account's investigative format: thesis + evidence + steelman. Treat sources/dates as of May 2026.",
+   "key_files": "README.md"
+  },
+  {
+   "name": "THEY-NEVER-LEFT",
+   "url": "https://github.com/JaronKBragg7337/THEY-NEVER-LEFT",
+   "category": "Writings & Theory",
+   "status": "ACTIVE",
+   "machine": "tape",
+   "summary_file": "summaries/THEY-NEVER-LEFT.md",
+   "live": [],
+   "summary": "A pattern-recognition thought experiment on ancient civilizations and 'what we call aliens' \u2014 explicitly framed as not a belief system ('I don't actually believe this'): if you had to build the most internally consistent alternative explanation, what would it look like?",
+   "ai_notes": "Speculative corpus with built-in epistemic framing; good example of how this author separates pattern-noticing from belief.",
+   "key_files": "README.md"
+  },
+  {
+   "name": "Pieces-Of-My-Life-",
+   "url": "https://github.com/JaronKBragg7337/Pieces-Of-My-Life-",
+   "category": "Writings & Theory",
+   "status": "ACTIVE",
+   "machine": "tape",
+   "summary_file": "summaries/Pieces-Of-My-Life-.md",
+   "live": [],
+   "summary": "Autobiography from memory: born 1997 Grant County, Marion IN; country childhood in Decatur, moves, family structure, and the journey to now \u2014 the raw life record behind ECIH and the YES/NO book. Personal context, written for the record.",
+   "ai_notes": "Primary operator-context document. For an AI serving this operator, this is the highest-signal background file that exists \u2014 read it to understand the person the systems are live-referenced to.",
+   "key_files": "README.md"
+  }
+ ],
+ "mirrors": [
+  {
+   "name": "SpaceYouLand/Framing-Lens",
+   "url": "https://github.com/SpaceYouLand/Framing-Lens",
+   "note": "Fork of JaronKBragg7337/Framing-Lens under the SpaceYouLand org. Same content as the primary; see summaries/Framing-Lens.md."
+  },
+  {
+   "name": "SpaceYouLand/President-Sim",
+   "url": "https://github.com/SpaceYouLand/President-Sim",
+   "note": "Upstream of JaronKBragg7337/President-Sim (the personal copy is the fork). Same game; see summaries/President-Sim.md."
+  }
+ ]
+};
